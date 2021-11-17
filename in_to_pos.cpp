@@ -2,7 +2,6 @@
 using namespace std;
 #include "stack.h"
 
-
 int pred(char c){
     if(c=='*'||c=='/')
         return 5;
@@ -12,11 +11,7 @@ int pred(char c){
         return 3;
 }
 
-
-int main(){
-    string i;
-    cout << "Enter";
-    cin >> i;
+string in_to_post(string i){
     stack s;
     char c;
     string fo;
@@ -43,5 +38,12 @@ int main(){
     while(!s.isempty()){
         fo+=s.pop();
     }
-    cout << fo;
+    return fo;
+}
+int main(){
+    string i;
+    cout << "Enter";
+    cin >> i;
+    string o = in_to_post(i);
+    cout << o;
 }
