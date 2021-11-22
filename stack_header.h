@@ -3,13 +3,16 @@ using namespace std;
 
 template <class T>
 class node{
-    private:
+    public:
         T data;
         node *next;
+};
 
+template <class T>
+class stack{
     public:
-        node* push(node* top,T val){
-            node* n = new node();
+        void push(T val){
+            node <T> *n = new node <T> ();
             n->data = val;
             if(top==NULL){
                 top = n;
@@ -18,31 +21,31 @@ class node{
                 n->next = top;
                 top = n;
             }
-            return top;
+            
         }
 
-        T pop(node* top){
+        T pop(){
             if(top==NULL){
                 cout << "stack underflow" << endl;
                 return 0;
             }
             else{
                 T d = top->data;
-                *top = *top->next;
+                top = top->next;
                 return d;
             }
         }
 
-        T peek(node* top){
+        T peek(){
             return top->data;
         }
 
-        void Display(node* top){
+        void Display(){
             if(top==NULL){
                 cout << "stack underflow" << endl;
             }
             else{
-                node* ptr = top;
+                node <T> *ptr = top;
                 while(ptr!=NULL){
                     cout << ptr->data << " ";
                     ptr = ptr->next;
@@ -51,11 +54,13 @@ class node{
             }
         }
 
-        bool isempty(node* top){
+        bool isempty(){
             if(top==NULL)
                 return true;
             else
                 return false;
         }
+    
+    private:
+        node <T> *top = NULL;
 };
-

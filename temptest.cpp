@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
-#include "stack1.h"
+#include "stack_header.h"
 
 int main(){
-    node <char> *top = NULL;
-    top = top->push(top,'a');
-    top = top->push(top,'b');
-    top = top->push(top,'c');
-    top->Display(top);
-    char val = top->pop(top);
-    cout << val << endl;
-    top->Display(top);
+    stack <int> s;
+    s.push(12);
+    s.push(22);
+    s.push(13);
+    s.push(14);
+    s.Display();
+    s.pop();
+    s.Display();
+    return 0;
 }
