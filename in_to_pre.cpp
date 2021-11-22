@@ -18,7 +18,7 @@ string in_topre(string inp){
         char c = inp[i];
         if(isalnum(c)){
             op += c;
-            cout << op << endl;
+            //cout << op << endl;
         }
         else if(c==')'){
             s.push(')');
