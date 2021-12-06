@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "stack.h"
+#include "stack_header.h"
 
 int pred(char c){
     if(c=='*'||c=='/')
@@ -12,7 +12,7 @@ int pred(char c){
 }
 
 string in_to_post(string i){
-    stack s;
+    stack <char> s;
     char c;
     string fo;
     for(int j=0;j<i.length();j++){
@@ -40,10 +40,12 @@ string in_to_post(string i){
     }
     return fo;
 }
+
 int main(){
     string i;
-    cout << "Enter";
+    cout << "Enter string: ";
     cin >> i;
     string o = in_to_post(i);
-    cout << o;
+    cout << "Postfix string: " << o;
+    return 0;
 }
